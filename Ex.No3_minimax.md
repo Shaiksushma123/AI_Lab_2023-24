@@ -1,6 +1,6 @@
 # Ex.No: 3  Implementation of Minimax Search
 ### DATE:                                                                            
-### REGISTER NUMBER : 
+### REGISTER NUMBER : 212221220002
 ### AIM: 
 Write a mini-max search algorithm to find the optimal value of MAX Player from the given graph.
 ### Algorithm:
@@ -13,21 +13,43 @@ Write a mini-max search algorithm to find the optimal value of MAX Player from t
 7. Min player find the minimum value by calling the minmax function recursively.
 8. Call the minimax function  and print the optimum value of Max player.
 9. Stop the program. 
-
 ### Program:
-
-
-
-
-
-
-
-
-
-
+```
+# A simple Python3 program to find
+# maximum score that
+# maximizing player can get
+import math
+def minimax (curDepth, nodeIndex,
+			maxTurn, scores,
+			targetDepth):
+	# base case : targetDepth reached
+	if (curDepth == targetDepth):
+		return scores[nodeIndex]
+	
+	if (maxTurn):
+		return max(minimax(curDepth + 1, nodeIndex * 2,
+					False, scores, targetDepth),
+				minimax(curDepth + 1, nodeIndex * 2 + 1,
+					False, scores, targetDepth))
+	
+	else:
+		return min(minimax(curDepth + 1, nodeIndex * 2,
+					True, scores, targetDepth),
+				minimax(curDepth + 1, nodeIndex * 2 + 1,
+					True, scores, targetDepth))
+	
+# Driver code
+scores = [3, 5, 2, 9, 12, 5, 23, 20]
+treeDepth = math.log(len(scores), 2)
+print("The optimal value is : ", end = "")
+print(minimax(0, 0, True, scores, treeDepth))
+# This code is contributed
+# by rootshadow
+```
 
 ### Output:
 
+![Screenshot 2023-10-28 105529](https://github.com/Aishwarya-TM/AI_Lab_2023-24/assets/127846109/89230177-ccf2-46d1-95c9-a191198f6370)
 
 
 ### Result:
