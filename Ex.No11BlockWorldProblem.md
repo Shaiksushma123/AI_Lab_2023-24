@@ -100,7 +100,8 @@ Step 10 : Obtain the plan for given problem.<br>
 
 ### Output/Plan:
 
-![image](https://github.com/Shaiksushma123/AI_Lab_2023-24/assets/159005642/7b2b8b56-d649-43e9-b4f5-b9966fef4642)
+![image](https://github.com/Shaiksushma123/AI_Lab_2023-24/assets/159005642/22f7112d-823f-403e-9f8f-f28cf5ae777c)
+
 ![image](https://github.com/Shaiksushma123/AI_Lab_2023-24/assets/159005642/23c1e35b-b330-419b-9c1b-311b3b5cfda4)
 
 
