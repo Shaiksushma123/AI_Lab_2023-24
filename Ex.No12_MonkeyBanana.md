@@ -140,7 +140,7 @@ Step 7: Stop the program.<br>
         )
         
         (:goal (and (hasbananas)))
-  )
+  
   
 
 ### Output/Plan:
