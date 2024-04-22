@@ -10,7 +10,7 @@ Define the three possible moves: "rock", "paper", "scissors".
 
 2. User Input
 
-Prompt the user to choose their move ("rock", "paper", or "scissors").
+ Prompt the user to choose their move ("rock", "paper", or "scissors").
 
 Validate the user's input to ensure it's one of the valid moves.
 
