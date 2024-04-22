@@ -8,7 +8,7 @@ To write a program to train the classifier to predict the next move of your oppo
 
 Define the three possible moves: "rock", "paper", "scissors".
 
-2. User Input
+2.User Input
 
  Prompt the user to choose their move ("rock", "paper", or "scissors").
 
