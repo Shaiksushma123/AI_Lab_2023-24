@@ -1,1 +1,151 @@
-ghb7t
+
+# Ex.No: 10 Learning – Use Supervised Learning  
+### DATE: 22-04-2024                                                                           
+### REGISTER NUMBER :212221060265 
+### AIM: 
+To write a program to train the classifier to predict the next move of your opponent in a game of Rock-Paper-Scissors. 
+###  Algorithm:
+1. Game Initialization
+
+Define the three possible moves: "rock", "paper", "scissors".
+
+2.User Input
+
+ Prompt the user to choose their move ("rock", "paper", or "scissors").
+
+Validate the user's input to ensure it's one of the valid moves.
+
+3. Computer's Move
+
+Generate a random number between 0 and 2 (inclusive).
+
+Use the random number to select the computer's move:
+
+0: "rock"
+
+1: "paper"
+
+2: "scissors"
+
+4. Determine Winner
+
+Compare the user's move to the computer's move according to the game rules:
+
+Rock wins over Scissors
+
+Paper wins over Rock
+
+Scissors wins over Paper
+
+If the moves are the same, it's a tie.
+
+5. Display Results
+
+Show the user their move, the computer's move, and the winner (user, computer, or tie).
+
+6. Repeat (Optional)
+
+Ask the user if they want to play again.
+
+If yes, repeat steps 2-5. Otherwise, end the game.
+
+### Program:
+
+import random
+
+# Define possible moves
+
+moves = ["rock", "paper", "scissors"]
+
+# Function to generate opponent's move with a bias
+
+def generate_opponent_move(history):
+
+# Initialize win/loss counts
+
+win_counts = {"rock": 0, "paper": 0, "scissors": 0}
+
+    # Analyze move history for bias
+
+for move in history:
+
+if move == "rock":
+
+win_counts["paper"] += 1
+
+elif move == "paper":
+
+win_counts["scissors"] += 1
+
+elif move == "scissors":
+
+win_counts["rock"] += 1
+
+    # Choose a move based on win counts (bias)
+    
+    max_win_count = max(win_counts.values())  
+
+    biased_moves = [move for move, count in win_counts.items() if count == max_win_count]
+    
+    return random.choice(biased_moves)
+
+# Gameplay loop
+ 
+ win_count = 0
+ 
+loss_count = 0
+
+tie_count = 0
+
+user_move = None
+
+history = []
+
+while True:
+
+# Get user input
+
+       user_move = input("Enter your move (rock, paper, scissors) or 'q' to quit: ").lower()
+
+       if user_move == 'q':
+          
+            break
+
+    # Validate user input
+     
+     if user_move not in moves:
+        
+print("Invalid move. Please try again.")
+        continue
+
+    # Generate opponent's move with bias
+    opponent_move = generate_opponent_move(history)
+    history.append(opponent_move)
+
+    # Determine the winner
+    if user_move == opponent_move:
+        print("It's a tie!")
+        tie_count += 1
+    elif (user_move == "rock" and opponent_move == "scissors") or \
+         (user_move == "paper" and opponent_move == "rock") or \
+         (user_move == "scissors" and opponent_move == "paper"):
+        print("You win!")
+        win_count += 1
+    else:
+        print("You lose!")
+        loss_count += 1
+
+    # Print game stats
+    print(f"Your move: {user_move}, Opponent's move: {opponent_move}")
+    print(f"Wins: {win_count}, Losses: {loss_count}, Ties: {tie_count}\n")
+
+print("Thanks for playing!")
+
+
+### Output:
+
+![Screenshot 2024-04-22 151943](https://github.com/Shaiksushma123/AI_Lab_2023-24/assets/159005642/d8063822-74ed-4d7b-97dc-56e5ac7ac5e3)
+
+### Result:
+Thus the system was trained successfully and the prediction was carried out.
+
